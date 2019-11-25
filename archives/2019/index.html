@@ -37,14 +37,12 @@
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 
 
-<script id="dsq-count-scr" src="//fuyuange.disqus.com/count.js" async></script>
-
 
 <script src="/js/iconfont.js?v=1.0.1" ></script>
 
 </head>
 <div style="display: none">
-  <input class="theme_disqus_on" value="true">
+  <input class="theme_disqus_on" value="false">
   <input class="theme_preload_comment" value="false">
   <input class="theme_blog_path" value="">
 </div>
@@ -277,19 +275,18 @@
         </p>
         
         
-    <section id="comments" class="disqus">
-    <style> aside.comment-bar { margin: auto 30px; }</style>
-    <div id="disqus_thread"></div>
+    <div class="gentie" id="comments">
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     <script>
-        var disqus_config = function(){
-            this.page.url = 'https://yuanshulin.com/';
-            this.page.identifier = 'archives/2019/index.html';
-        };
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = '//fuyuange.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
+        var cloudTieConfig;
+        function loadComment() {
+            cloudTieConfig = {
+                url: "https://yuanshulin.com/",
+                sourceId: "",
+                productKey: "",
+                target: "cloud-tie-wrapper"
+            };
+            $.getScript("https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js");
         }
     </script>
     
@@ -322,11 +319,7 @@
     </script>
 
 
-</section>
-
-<!-- Add comment count-->
-<span class="disqus-comment-count" style="display: none" data-disqus-identifier="archives/2019/index.html"></span>
-<span class="disqus-comment-count" style="display: none" data-disqus-url=""></span>
+</div>
 
     </div>
     <div class="copyright">
