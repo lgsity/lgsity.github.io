@@ -2,6 +2,19 @@
 <search> 
   
   
+    
+    <entry>
+      <title>搭建自己的hexo博客教程搭建（Windows系统）</title>
+      <link href="/2019/11/26/test/"/>
+      <url>/2019/11/26/test/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装Git和node-js"><a href="#安装Git和node-js" class="headerlink" title="安装Git和node.js"></a>安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>和<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></h2><p>直接进入官网或者点击我上面的链接，下载对应的Windows系统版本，然后直接安装。检验是否成功：打开cmd，输入<code>node -v</code>,有版本号出来说明node.js安装成功，在桌面鼠标右击，有Git Bash Here选项说明安装成功。</p><h2 id="安装hexo客户端"><a href="#安装hexo客户端" class="headerlink" title="安装hexo客户端"></a>安装hexo客户端</h2><p>在你电脑D盘或别的盘，新建个目录如hexo，回到桌面，右击打开Git Bash Here,这是一个类似Linux终端的界面</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
   
   
 </search>
