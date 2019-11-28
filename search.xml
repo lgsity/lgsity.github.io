@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java虚拟机</title>
+      <link href="/2019/11/28/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <url>/2019/11/28/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<h3 id="对Java虚拟机的理解"><a href="#对Java虚拟机的理解" class="headerlink" title="对Java虚拟机的理解"></a>对Java虚拟机的理解</h3><p> JVM是Java Virtual Machine（Java虚拟机）的缩写 ，是执行字节码文件（.class）的虚拟机进程。</p><p>java源程序（.java）被编译器编译成字节码文件（.class）,然后Java虚拟机将字节码文件解释成机器码（不同平台的机器码不同），这就是Java虚拟机的基本定义和作用。</p><h3 id="java被称作与平台无关的语言"><a href="#java被称作与平台无关的语言" class="headerlink" title="java被称作与平台无关的语言"></a>java被称作与平台无关的语言</h3><p>Java虚拟机可以将字节码文件编译成该平台对应的机器码，而不需要程序员对运行在不同平台的java程序另外修改代码，也不需要重新编译。真正实现一次编译，到处运行。java虚拟机知道底层硬件平台的指令长度和其他特性</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java虚拟机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建自己的hexo博客教程</title>
       <link href="/2019/11/28/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
       <url>/2019/11/28/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</url>

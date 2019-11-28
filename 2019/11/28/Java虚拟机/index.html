@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小白</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="小白">
+  <title>Java虚拟机 | 小白</title>
+  <meta name="keywords" content=" java虚拟机 ">
+  <meta name="description" content="Java虚拟机 | 小白">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我是一个在校大学生，今年大三了，很遗憾现在才搭建起自己的空间，这个事情原本在我大二刚开始就应该做的，由于一直不肯动手，也是由于愿望不够强烈，就一直拖延到现在。由于大三以来，荒废了比较多的时间，不得不逼自己一把，搭建起自己的博客，促使自己去整理，总结学过的知识，同时也希望能帮助到更多的人。接下来剩余的大学时光，我将先总结已学过的技术，写成博客，发布到这里，后续将继续学习形成我的技术栈，也会时时在这里">
 <meta property="og:type" content="website">
@@ -50,7 +50,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="http://q1oi1oc62.bkt.clouddn.com/touxiang.jpg" />
@@ -251,12 +251,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Java虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于我"><span class="toc-text">关于我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#致谢"><span class="toc-text">致谢</span></a></li></ol>
+        <h1 class="article-title">Java虚拟机</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="Java">Java</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">java虚拟机</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-28 23:42:38'>2019-11-28 23:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:197</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#对Java虚拟机的理解"><span class="toc-text">对Java虚拟机的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java被称作与平台无关的语言"><span class="toc-text">java被称作与平台无关的语言</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -269,19 +325,26 @@
     }
 </style>
 </div>
-            <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Java后端菜鸟一枚，热衷于Java。喜欢和伙伴一起出去吃喝玩乐，吃自助、喝点小酒，五黑，唱歌，跑步，打乒乓球、羽毛球。我将在这里分享自己的学习历程，以及实践中遇到的问题的解决方案，如有错误，欢迎批评改正！</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  生成，部署在  <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> ，主题基于  <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 修改生成，非常感谢 <a href="https://github.com/P233" target="_blank" rel="noopener">Peiwen Lu</a> 开发出这么漂亮的主题。</p>
-<p>本博客的源码托管在 <a href="https://github.com/yslinzz/yslinzz.github.io" target="_blank" rel="noopener">Github</a> 上，如果有任何改进意见，欢迎讨论。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="对Java虚拟机的理解"><a href="#对Java虚拟机的理解" class="headerlink" title="对Java虚拟机的理解"></a>对Java虚拟机的理解</h3><p> JVM是Java Virtual Machine（Java虚拟机）的缩写 ，是执行字节码文件（.class）的虚拟机进程。</p>
+<p>java源程序（.java）被编译器编译成字节码文件（.class）,然后Java虚拟机将字节码文件解释成机器码（不同平台的机器码不同），这就是Java虚拟机的基本定义和作用。</p>
+<h3 id="java被称作与平台无关的语言"><a href="#java被称作与平台无关的语言" class="headerlink" title="java被称作与平台无关的语言"></a>java被称作与平台无关的语言</h3><p>Java虚拟机可以将字节码文件编译成该平台对应的机器码，而不需要程序员对运行在不同平台的java程序另外修改代码，也不需要重新编译。真正实现一次编译，到处运行。java虚拟机知道底层硬件平台的指令长度和其他特性</p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 2762954662@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -301,6 +364,13 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+
+
 
 
     </div>
