@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>搭建自己的hexo博客教程 | 小白</title>
-  <meta name="keywords" content=" hexo ">
-  <meta name="description" content="搭建自己的hexo博客教程 | 小白">
+  <title>正则表达式 | 小白</title>
+  <meta name="keywords" content=" 正则表达式 ">
+  <meta name="description" content="正则表达式 | 小白">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我是一个在校大学生，今年大三了，很遗憾现在才搭建起自己的空间，这个事情原本在我大二刚开始就应该做的，由于一直不肯动手，也是由于愿望不够强烈，就一直拖延到现在。由于大三以来，荒废了比较多的时间，不得不逼自己一把，搭建起自己的博客，促使自己去整理，总结学过的知识，同时也希望能帮助到更多的人。接下来剩余的大学时光，我将先总结已学过的技术，写成博客，发布到这里，后续将继续学习形成我的技术栈，也会时时在这里">
 <meta property="og:type" content="website">
@@ -265,9 +265,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-搭建自己的hexo博客教程" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">搭建自己的hexo博客教程</h1>
+        <h1 class="article-title">正则表达式</h1>
     
     <div class="article-meta">
         
@@ -275,26 +275,26 @@
         
         <span class="book">
             
-                <a  data-rel="博客">博客</a>
+                <a  data-rel="Java">Java</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color5">hexo</a>
+            <a class="color1">正则表达式</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-28 22:12:26'>2019-11-28 22:10</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-29 23:53:57'>2019-11-29 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:730</span>
+        <span>字数:964</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -324,7 +324,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Git和node-js"><span class="toc-text">安装Git和node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo客户端"><span class="toc-text">安装hexo客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装npm（-Node-Package-包-Manager-管理器-）"><span class="toc-text">安装npm（ Node Package(包) Manager(管理器)）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完成搭建"><span class="toc-text">完成搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#托管到github仓库"><span class="toc-text">托管到github仓库</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式简介"><span class="toc-text">正则表达式简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发中使用正则表达式的流程"><span class="toc-text">开发中使用正则表达式的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式语法（1）"><span class="toc-text">正则表达式语法（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通字符"><span class="toc-text">普通字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的转义字符"><span class="toc-text">简单的转义字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式语法（2）"><span class="toc-text">正则表达式语法（2）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标准字符集合"><span class="toc-text">标准字符集合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式语法（3）"><span class="toc-text">正则表达式语法（3）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义字符集合"><span class="toc-text">自定义字符集合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式语法（4）"><span class="toc-text">正则表达式语法（4）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#量词"><span class="toc-text">量词</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -340,32 +340,129 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Git和node-js"><a href="#安装Git和node-js" class="headerlink" title="安装Git和node.js"></a>安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>和<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></h2><p>直接进入官网或者点击我上面的链接，下载对应的Windows系统版本，然后直接安装。检验是否成功：打开cmd，输入<code>node -v</code>,有版本号出来说明node.js安装成功，在桌面鼠标右击，有Git Bash Here选项说明安装成功。</p>
-<h2 id="安装hexo客户端"><a href="#安装hexo客户端" class="headerlink" title="安装hexo客户端"></a>安装hexo客户端</h2><p>在你电脑D盘或别的盘，新建个目录如hexo，回到桌面，右击打开Git Bash Here,这是一个类似Linux终端的界面，保证在你新建的目录下执行<code>npm install -g hexo-cli</code>命令，安装hexo客户端，然后执行<code>hexo init blog</code>,blog是自定义的，会生成这个目录，操作过程如下</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128104501240.png" alt=""></p>
-<h2 id="安装npm（-Node-Package-包-Manager-管理器-）"><a href="#安装npm（-Node-Package-包-Manager-管理器-）" class="headerlink" title="安装npm（ Node Package(包) Manager(管理器)）"></a>安装npm（ Node Package(包) Manager(管理器)）</h2><p>先进入刚刚生成的目录blog，再执行<code>npm install</code>，如果输出信息有提示你 <strong>use npm audit fix –force to install breaking changes; or refer to npm audit for steps to fix these manually)</strong> 那么你再执行一下<code>npm audit fix</code> 检测项目依赖中的漏洞并自动安装需要更新的有漏洞的依赖 ,如果没有提示则不必执行。（你要是不清楚是否需要执行就执行一下，反正这条命令也是检测环境的命令）像我下面就没有出现提示</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128105618030.png" alt=""></p>
-<h2 id="完成搭建"><a href="#完成搭建" class="headerlink" title="完成搭建"></a>完成搭建</h2><p>执行<code>hexo generate</code>或者缩写<code>hexo g</code>,生成静态博客</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128105917349.png" alt=""></p>
-<p>执行<code>hexo serve</code>或者缩写<code>hexo s</code>,启动服务</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128110056206.png" alt=""></p>
-<p>正常启动后，打开浏览器，地址栏访问localhost:4000,就可以看到hexo的默认页面</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128110333384.png" alt=""></p>
-<p>在git bash下Ctrl+C关闭hexo server</p>
-<h2 id="托管到github仓库"><a href="#托管到github仓库" class="headerlink" title="托管到github仓库"></a>托管到github仓库</h2><p>你要有一个github的账号，然后新建一个空的存储库，<strong>注意：你存储库的名字必须是</strong><code>xxxxx.github.io</code>,xxxxx就是你的github用户名，然后回到git bash安装deployer-git,这是用来将你的博客推送到github仓库的工具，执行<code>npm install hexo-deployer-git</code>，这是在blog下执行，不是在hexo</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128111747192.png" alt=""></p>
-<p>然后去本地修改_config.yml文件，</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128112005016.png" alt=""></p>
-<p>找到deploy配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yslinzz/abc.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：每一个冒号后面要有一个空格，repo是刚刚你自己建的那个空的仓库的地址，如下图（我这里abc命名是随便写的，与前面冲突，不要在意）</strong></p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128112647499.png" alt=""></p>
-<p>然后执行<code>hexo clean</code>清理一下，再执行<code>hexo generate</code>或者<code>hexo g</code> 生成静态博客系统 ,最后执行<code>hexo deploy</code>或者缩写<code>hexo d</code>将博客系统推送到GitHub并发布</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128113444910.png" alt=""></p>
-<p>成功后，你在GitHub仓库刷新就会有你的博客系统，此时你在地址栏访问刚刚在_config.yml中配置的repo就可以访问到你的博客了</p>
-<p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128113800406.png" alt=""></p>
-<p>至此，你的个人博客就搭建并发布完成，后续你可以找一个漂亮的主题，然后在上面记录你的点点滴滴，有问题可以在<a href="https://yuanshulin.com/">我的博客</a>下留言，或者Email我，</p>
+        <h2 id="正则表达式简介"><a href="#正则表达式简介" class="headerlink" title="正则表达式简介"></a>正则表达式简介</h2><p>正则表达式对复杂的文本处理具有灵活简洁的优势，正则不仅仅在Java中有，大部分的编程语言、数据库、文本编辑器、开发环境都支持正则表达式，但是在不同环境下可能会有略微不同。在前端正则表达式经常用作校验用户输入的数据是否符合要求。</p>
+<p>正则表达式就是描述了一个规则，通过这个规则可以匹配一类字符串。学习正则表达式很大程度上就是学习它的<strong>语法规则</strong></p>
+<h2 id="开发中使用正则表达式的流程"><a href="#开发中使用正则表达式的流程" class="headerlink" title="开发中使用正则表达式的流程"></a>开发中使用正则表达式的流程</h2><ol>
+<li>分析要匹配的数据，写出对应的正则表达式</li>
+<li>在工具软件中进行匹配测试，设置一些典型数据或者边界值或者是自己不确定是否能匹配到的值；也可以另外写段代码进行测试。</li>
+<li>在程序中调用通过测试的正则表达式。</li>
+</ol>
+<h2 id="正则表达式语法（1）"><a href="#正则表达式语法（1）" class="headerlink" title="正则表达式语法（1）"></a>正则表达式语法（1）</h2><ul>
+<li><h4 id="普通字符"><a href="#普通字符" class="headerlink" title="普通字符"></a>普通字符</h4><p>字母、数字、汉字、下划线以及没有特殊定义的标点符号都是<strong>“普通字符”</strong>。表达式中的普通字符在匹配一个字符串时，匹配与之相同的一个字符串（比如表达式<code>a2你_!</code>意为匹配<code>a2你_!</code>这个字符串）。</p>
+</li>
+<li><h4 id="简单的转义字符"><a href="#简单的转义字符" class="headerlink" title="简单的转义字符"></a>简单的转义字符</h4><table>
+<thead>
+<tr>
+<th align="center">\n</th>
+<th align="center">代表换行符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\t</td>
+<td align="center">指标符（一般指tab键）</td>
+</tr>
+<tr>
+<td align="center">\\</td>
+<td align="center">代表\本身</td>
+</tr>
+<tr>
+<td align="center">^,  \$,  \.,  \(,  \),  \{,  \},  \?,  \+,  \*,  \</td>
+<td align="center">,  \[,  \]</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="正则表达式语法（2）"><a href="#正则表达式语法（2）" class="headerlink" title="正则表达式语法（2）"></a>正则表达式语法（2）</h2><ul>
+<li><h4 id="标准字符集合"><a href="#标准字符集合" class="headerlink" title="标准字符集合"></a>标准字符集合</h4><p>——能够与‘多种字符’匹配的表达式</p>
+<p>——<strong>注意区分大小写，大写与小写意思相反，比如\D表示除0~9以外的任何字符</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">\d</th>
+<th align="center">任意一个0~9的数字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\w</td>
+<td align="center">任意一个字母或数字或下划线，即A<del>Z,a</del>z,0~9中的任意一个</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="center">空格、制表符、换行符等空白字符中的任意一个</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td align="center">小数点匹配除<strong>“\n”</strong>外的所有字符，匹配所有字符一般用<strong>[\s\S]</strong></td>
+</tr>
+</tbody></table>
+<p>[^[\s\S]]: 中间相当于有一个或，就是取\s或者\S，\s 取空格、制表符、换行符等空白字符中的任意一个，\S取所有字符去掉\s，所以就取到了所有字符。</p>
+<h2 id="正则表达式语法（3）"><a href="#正则表达式语法（3）" class="headerlink" title="正则表达式语法（3）"></a>正则表达式语法（3）</h2></li>
+<li><h4 id="自定义字符集合"><a href="#自定义字符集合" class="headerlink" title="自定义字符集合"></a>自定义字符集合</h4><p>——[]中括号匹配方式，能够匹配中括号内部的<strong>任意一个</strong>字符</p>
+<table>
+<thead>
+<tr>
+<th align="center">[ab5@]</th>
+<th align="center">匹配“a”或者“b”或者“5”或者“@”</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">[^abc]</td>
+<td align="center">匹配“a”,”b”,”c”<strong>之外</strong>的任意一个字符</td>
+</tr>
+<tr>
+<td align="center">[f-k]</td>
+<td align="center">匹配”f”到”k”之间的任意一个字符（包括f和k）</td>
+</tr>
+<tr>
+<td align="center">[^F-K2-5]</td>
+<td align="center">匹配“F”<del>“K”,”2”</del>“5”之外的任意一个字符</td>
+</tr>
+</tbody></table>
+<p>——正则表达式的特殊符号被包括在中括号中则失去特殊意义（比如$在中括号中只表示普通字符”$”），除了^,-之外。</p>
+<p>——标准字符集合，除小数点外，如果被包含于中括号，自定义字符集合将包含该集合。比如：</p>
+<p>[\d.\-+]将匹配：数字、小数点、+、-</p>
+</li>
+</ul>
+<h2 id="正则表达式语法（4）"><a href="#正则表达式语法（4）" class="headerlink" title="正则表达式语法（4）"></a>正则表达式语法（4）</h2><ul>
+<li><h4 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h4><p>——修饰匹配字符的次数</p>
+<table>
+<thead>
+<tr>
+<th align="center">{n}</th>
+<th align="center">表达式出现n次</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">{m,n}</td>
+<td align="center">表达式出现最少m次，最多n次</td>
+</tr>
+<tr>
+<td align="center">{m,}</td>
+<td align="center">表达式出现最少m次</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">等价于{0,1}，不出现或者出现一次</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">表达式至少出现一次，等价于{1,}</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">不出现或者任意次，等价于{0,}</td>
+</tr>
+</tbody></table>
+<p>——匹配次数中的<strong>贪婪模式</strong>（匹配字符越多越好，默认！）</p>
+<p>​    比如：表达式：\d{2,3}   样例：12345678  结果：匹配到123, 456, 78</p>
+<p>——<strong>非贪婪模式</strong>（匹配字符越少越好，在表示匹配次数的特殊符号后再加上一个”?”）</p>
+<p>​    比如：表达式：\d{2,3}？   样例：12345678  结果：匹配到12, 34, 56, 78</p>
+<p><strong>注意</strong></p>
+<p>​    \d\d{3}  :  表示匹配4个数字</p>
+<p>​    (\d\d){3}  :  表示匹配6个数字</p>
+<p>​    </p>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 2762954662@qq.com </span>
