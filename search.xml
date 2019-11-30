@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>正则表达式练习</title>
+      <link href="/2019/11/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%83%E4%B9%A0/"/>
+      <url>/2019/11/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%83%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="电话号码验证"><a href="#电话号码验证" class="headerlink" title="电话号码验证"></a>电话号码验证</h2><ul><li><p><strong>要求</strong></p><ol><li>固定电话：如果有区号，那么区号可以是3位或者4位，首位必须是0，电话号码为7位到8位，区号与电话号码之间用“-”连接，如果没有区号，电话号码为7位到8位。</li><li>移动电话：11位，第一第二位为“13”，“15”，“18”三者之一。</li></ol></li><li><p><strong>我的思路</strong></p><ol><li>先求不含区号的固定电话正则表达式：\d{7,8}</li><li>再求含区号的：0\d{2,3}-\d{7,8}</li><li>移动的：1[358]\d{9}</li><li>最后把他们用或连接：(\d{7,8})|(0\d{2,3}-\d{7,8})|(1[358]\d{9})</li></ol><p>过程中我以为表示或需要转义，使用的是\|,导致验证出错，这里再次提醒自己，|表示“或”的意思，\|单纯得表示“|”字符，没有特殊含义。</p></li><li><p><strong>验证</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> regex;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Telephone</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123; </span><br><span class="line"><span class="comment">//需要验证的手机号</span></span><br><span class="line">String tel=<span class="string">"12631721765"</span>;</span><br><span class="line"><span class="comment">//正则表达式</span></span><br><span class="line">        String reg =<span class="string">"(0\\d&#123;2,3&#125;-\\d&#123;7,8&#125;)|(\\d&#123;7,8&#125;)|(1[358]\\d&#123;9&#125;)"</span> ;  </span><br><span class="line">        <span class="comment">//编译正则表达式</span></span><br><span class="line">     Pattern pattern = Pattern.compile(reg);</span><br><span class="line">    </span><br><span class="line">    Matcher matcher = pattern.matcher(tel);</span><br><span class="line">    <span class="comment">// 字符串是否与正则表达式相匹配</span></span><br><span class="line">    <span class="keyword">boolean</span> rs = matcher.matches();</span><br><span class="line">    System.out.println(rs);                                </span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="邮箱验证"><a href="#邮箱验证" class="headerlink" title="邮箱验证"></a>邮箱验证</h2><ul><li><p><strong>要求</strong></p><ol><li>用户名：字母、数字、中划线、下划线组成</li><li>@</li><li>网址：字母、数字组成</li><li>小数点：.</li><li>组织域名：2-4位字母组成</li></ol></li><li><p><strong>我的思路</strong></p><p>这个邮箱的话直接匹配，就是一条条规则去满足，用户名：[\w-]+,到@：[\w-]+@,到网址：[\w-]+@[A-Za-z0-9]+，到小数点，这里小数点和组织域名应该看成一个组合，因为有的会有.org.cn这样两组的，所以到小数点和组织域名：[\w-]+@[A-Za-z0-9]+(\.[A-Za-z]{2,4}){1,2}</p></li><li><p><strong>验证</strong></p><p>可以采用专门的正则表达式的软件工具验证，也可以用我上面那段代码验证</p><p>——刚学完一些语法写的，验证了几组数据都能达到要求，有漏洞欢迎指正！</p></li></ul><h2 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h2><p><img src="http://q1oi1oc62.bkt.clouddn.com/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 正则表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>正则表达式</title>
       <link href="/2019/11/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
       <url>/2019/11/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
