@@ -174,7 +174,7 @@
     <div></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="3">
-<input type="hidden" id="yelog_site_word_count" value="2.3k">
+<input type="hidden" id="yelog_site_word_count" value="2.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -212,11 +212,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">正则表达式</a>
+        <a class="color5">hexo</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">hexo</a>
+        <a class="color1">正则表达式</a>
     </li>
     
     <div class="clearfix"></div>
@@ -237,20 +237,20 @@
             <span class="post-date" title="2019-11-28 23:23:04">2019/11/28</span>
         </a>
         
-        <a  class="Java "
-           href="/2019/11/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
-           data-tag="正则表达式"
-           data-author="" >
-            <span class="post-title" title="正则表达式">正则表达式</span>
-            <span class="post-date" title="2019-11-29 20:34:17">2019/11/29</span>
-        </a>
-        
         <a  class="博客 "
            href="/2019/11/28/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84hexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"
            data-tag="hexo"
            data-author="" >
             <span class="post-title" title="搭建自己的hexo博客教程">搭建自己的hexo博客教程</span>
             <span class="post-date" title="2019-11-28 22:10:26">2019/11/28</span>
+        </a>
+        
+        <a  class="Java "
+           href="/2019/11/29/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <span class="post-date" title="2019-11-29 20:34:17">2019/11/29</span>
         </a>
         
     </nav>
@@ -289,12 +289,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-30 10:19:10'>2019-11-29 20:34</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-30 11:26:16'>2019-11-29 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.3k</span>
+        <span>字数:1.7k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -324,7 +324,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式简介"><span class="toc-text">正则表达式简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发中使用正则表达式的流程"><span class="toc-text">开发中使用正则表达式的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（1）"><span class="toc-text">语法（1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（2）"><span class="toc-text">语法（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（3）"><span class="toc-text">语法（3）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（4）"><span class="toc-text">语法（4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（5）"><span class="toc-text">语法（5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匹配模式"><span class="toc-text">匹配模式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式简介"><span class="toc-text">正则表达式简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发中使用正则表达式的流程"><span class="toc-text">开发中使用正则表达式的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（1）"><span class="toc-text">语法（1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（2）"><span class="toc-text">语法（2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（3）"><span class="toc-text">语法（3）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（4）"><span class="toc-text">语法（4）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（5）"><span class="toc-text">语法（5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匹配模式"><span class="toc-text">匹配模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法（6）"><span class="toc-text">语法（6）</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -492,6 +492,36 @@
 <p>​    y\Z  :  匹配最后一行结束位置的y，如果最后一行结束位置不是y就不匹配</p>
 </li>
 </ul>
+<h2 id="语法（6）"><a href="#语法（6）" class="headerlink" title="语法（6）"></a>语法（6）</h2><ul>
+<li><p><strong>选择符和分组</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">表达式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">|（分支结构）</td>
+<td>左右两边表达式之间“或”关系，匹配左边或者右边</td>
+</tr>
+<tr>
+<td align="center">()捕获组</td>
+<td>(1)在被修饰匹配次数时，括号中的表达式可以作为整体被修饰(2)取匹配结果的时候，括号中的表达式匹配到的内容可以被单独得到(3)每一对括号会分配一个编号，使用()的捕获根据左括号的顺序从1开始自动编号。捕获元素编号为0的第一个捕获是由整个正则表达式模式匹配的文本</td>
+</tr>
+<tr>
+<td align="center">(?:Expression)非捕获组</td>
+<td>一些表达式中，不得不使用(),但是又不需要保存()中子表达式匹配的内容，这时可以用非捕获组来抵消使用()带来的副作用（在处理大量文本时，保存会消耗大量内存）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>反向引用（\nnn）</strong></p>
+<p>-每一对()会分配一个编号，使用()的捕获根据<strong>左括号的顺序</strong>从1开始自动编号。</p>
+<p>-通过反向引用，可以对分组<strong>已捕获的字符串</strong>进行引用</p>
+<p>比如([a-z]{2})\1对字符串”abcd  ababb dbdbdb”匹配到”abab”,”dbdb”。意思是a-z任意2个字母作为捕获组，再引用一次</p>
+<p>(?:[a-z]{2})不影响([a-z]{2})表达的意思，只是匹配的内容不会存起来，就无法进行引用，(?:[a-z]{2})\1这个表达式将无效</p>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 2762954662@qq.com </span>
@@ -581,7 +611,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#java虚拟机','#正则表达式','#hexo',],
+            'data': ['#java虚拟机','#hexo','#正则表达式',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
