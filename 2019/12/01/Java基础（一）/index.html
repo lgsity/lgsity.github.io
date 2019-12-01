@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | 小白</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | 小白">
+  <title>Java基础（一） | 小白</title>
+  <meta name="keywords" content=" Java基础 ">
+  <meta name="description" content="Java基础（一） | 小白">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我是一个在校大学生，今年大三了，很遗憾现在才搭建起自己的空间，这个事情原本在我大二刚开始就应该做的，由于一直不肯动手，也是由于愿望不够强烈，就一直拖延到现在。由于大三以来，荒废了比较多的时间，不得不逼自己一把，搭建起自己的博客，促使自己去整理，总结学过的知识，同时也希望能帮助到更多的人。接下来剩余的大学时光，我将先总结已学过的技术，写成博客，发布到这里，后续将继续学习形成我的技术栈，也会时时在这里">
 <meta property="og:type" content="website">
@@ -285,24 +285,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-Java基础（一）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">Java基础（一）</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="Java">Java</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color2">Java基础</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-26 10:43:24'>2019-11-26 09:26</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-01 17:10:05'>2019-12-01 10:35</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:206</span>
+        <span>字数:1.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -332,7 +344,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中如何跳出当前的多重嵌套循环"><span class="toc-text">Java中如何跳出当前的多重嵌套循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-和-amp-amp-的区别"><span class="toc-text">&amp;和&amp;&amp;的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int和Integer的区别"><span class="toc-text">int和Integer的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何输出一个某种编码的字符串"><span class="toc-text">如何输出一个某种编码的字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-和StringBuffer的区别"><span class="toc-text">String 和StringBuffer的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String不是最基本的数据类型"><span class="toc-text">String不是最基本的数据类型</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -348,9 +360,181 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我是一个在校大学生，今年大三了，很遗憾现在才搭建起自己的空间，这个事情原本在我大二刚开始就应该做的，由于一直不肯动手，也是由于愿望不够强烈，就一直拖延到现在。由于大三以来，荒废了比较多的时间，不得不逼自己一把，搭建起自己的博客，促使自己去整理，总结学过的知识，同时也希望能帮助到更多的人。接下来剩余的大学时光，我将先总结已学过的技术，写成博客，发布到这里，后续将继续学习形成我的技术栈，也会时时在这里与大家分享。</p>
-<p>​        “你所谓的迷茫，不过是清醒地看着自己沉沦。”  </p>
-<p>​                                                                            ——共勉</p>
+        <h2 id="Java中如何跳出当前的多重嵌套循环"><a href="#Java中如何跳出当前的多重嵌套循环" class="headerlink" title="Java中如何跳出当前的多重嵌套循环"></a>Java中如何跳出当前的多重嵌套循环</h2><ul>
+<li><p>可以用带标签的break语句跳出，但是在Java中应该避免使用带标签break和continue语句，因为它不会让你的程序变得更优雅，很多时候甚至有相反的作用，所以这种语法其实不知道更好</p>
+<pre><code class="java">package basis;
+
+/**
+ * 跳出多重嵌套循环
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo01 {
+    public static void main(String[] args) {
+        method1();
+        method2();
+    }
+
+    //定义标号，break退出
+    public static void method1() {
+        out://外层循环定义标号
+            for(int i=0;i&lt;10;i++) {
+                for(int j=0;j&lt;10;j++) {
+                    System.out.println(&quot;i=&quot;+i+&quot;,j=&quot;+j);
+                    if(j==6)
+                        break out;//使用标号
+                }
+            }
+    }
+
+    //让外层循环受到内层循环的控制
+    public static void method2() {
+        boolean flag = false;
+        for(int i=0;i&lt;10&amp;&amp;!flag;i++) {
+            for(int j=0;j&lt;10;j++) {
+                System.out.println(&quot;i=&quot;+i+&quot;,j=&quot;+j);
+                if(j==6) {
+                    flag = true;//内层控制外层
+                    break;//跳出内层循环
+                }
+            }
+        }
+    }
+}</code></pre>
+</li>
+<li><p><strong>break和continue的区别</strong>(觉得<a href="https://blog.csdn.net/Baronrothschlid/article/details/88936277" target="_blank" rel="noopener">这个</a>很形象，就摘抄过来了)</p>
+<p>假设有10个人参加面试，现在进行到第三个人了，突然，面试官有事了，需要走，那么今天剩下这些人就没有办法继续面试了，显然面试整个结束了。(break)</p>
+<p>假设有10个人参加面试，现在进行到第三个人了，面试官想要招聘一位女生做秘书，但是这第三个人是一位男士，面试官说：今天咱们就聊到这里吧，下一位。（continue）</p>
+</li>
+</ul>
+<h2 id="amp-和-amp-amp-的区别"><a href="#amp-和-amp-amp-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h2><ul>
+<li><p>&amp;有按位与和逻辑与，按位与就是把两个数都转化成二进制，然后<strong>逐位相与</strong>，比如下面的5&amp;6，就是00000101和00000110相与，结果为00000100，即4；逻辑与&amp;是<strong>非短路与</strong>，就是所有条件都会判断，<strong>短路与</strong>&amp;&amp;就是判断到当前条件不符合就不会再判断剩下的条件，测试代码如下：</p>
+<pre><code class="java">package basis;
+
+/**
+ * &amp;与&amp;&amp;的区别
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo02 {
+    public static void main(String[] args) {
+        //按位与&amp;
+        int x = 5 &amp; 6;
+        System.out.println(x);//x=4
+        int a = 1;
+        int b = 2;
+        try {
+            //非短路与&amp;
+            if(a&gt;b &amp; a&lt;b/0)
+                System.out.println(&quot;不可能输出&quot;);
+        }catch (ArithmeticException e) {
+            System.out.println(&quot;非短路与&amp;就是所有条件都会判断，所以这里会报错，然后输出我。&quot;);
+        }
+        //短路与&amp;&amp;
+        if(a&gt;b &amp;&amp; a&lt;b/0) {
+            System.out.println(&quot;不可能输出&quot;);
+        }else {
+            System.out.println(&quot;短路与&amp;&amp;就是当条件不满足时，后面的条件不会再判断，所以这里不会报错&quot;);
+        }
+
+    }
+}</code></pre>
+</li>
+</ul>
+<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
+<li><p>最主要的区别就是int是基本数据类型，Integer是int的包装类，用<strong>面向对象的思想</strong>去看Integer，Java是一个近乎纯洁的面向对象编程语言，但是为了编程方便还是引入了基本数据类型，但是为了能把这些数据类型当作对象操作，Java为每一个基本数据类型都引入了对应的包装类型，从Java5开始引入了<strong>自动装/拆箱</strong>机制，使得二者可以相互转换。</p>
+</li>
+<li><p>装箱就是把int转成Integer对象，拆箱与之相反；对象缺省值是null，基本数据类型缺省值和类型有关，Integer缺省值是null，int缺省值是0。</p>
+<pre><code class="java">package basis;
+
+/**
+ * 自动装箱，拆箱
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo03 {
+    public static void main(String[] args) {
+        Integer a = 5;//自动装箱
+        Integer b = new Integer(5);
+        int c = 5;
+        System.out.println(a==b);//false,a,b为两个不同的对象
+        System.out.println(a==c);//true,a自动拆箱成int类型与c比较
+    }
+}</code></pre>
+</li>
+<li><p>——原始类型：byte, int, long, float, double, short, char, boolean</p>
+<p>——包装类型：Byte, Integer, Long, Float, Double, Short, Character, Boolean</p>
+</li>
+</ul>
+<h2 id="如何输出一个某种编码的字符串"><a href="#如何输出一个某种编码的字符串" class="headerlink" title="如何输出一个某种编码的字符串"></a>如何输出一个某种编码的字符串</h2><ul>
+<li><p>字符串先调用getBytes(String charsetName)（参数为当前字符串的编码格式）转换成字节数组，再将此字节数组和要转换成的字节编码一起作为参数传入String类的构造方法中，即可生成指定编码的字符串，测试代码如下：</p>
+<pre><code class="java">package basis;
+
+/**
+ * 输出指定编码字符串
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo04 {
+    public static void main(String[] args) {
+        String str = &quot;abcd&quot;;
+        String tempStr = &quot;&quot;;
+         try {
+         tempStr = new String(str.getBytes(&quot;utf-8&quot;), &quot;unicode&quot;);
+         tempStr = tempStr.trim();//trim() 方法用于删除字符串的头尾空白符。
+         }
+         catch (Exception e) {
+         System.err.println(e.getMessage());
+         }
+         System.out.println(tempStr);//慢捤
+    }
+}</code></pre>
+</li>
+</ul>
+<h2 id="String-和StringBuffer的区别"><a href="#String-和StringBuffer的区别" class="headerlink" title="String 和StringBuffer的区别"></a>String 和StringBuffer的区别</h2><ul>
+<li><p>String类是final的，不可修改的，只要改动了那就一定不是原来的对象，StringBuffer类拥有很多修改的方法，最重要的是不需要创建新的对象。String使用+拼接字符串时，一定要找一个新的更大的内存来存储，这是非常耗时的，而StringBuffer是预先就分配了指定长度的内存空间，不需要频繁分配内存，所以操作经常需要修改的字符串还是使用StringBuffer效率更高。</p>
+<pre><code class="java">package basis;
+
+/**
+ * String和StringBuffer区别
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo05 {
+    public static void main(String[] args) {
+        StringBuffer sb1 = new StringBuffer();//分配16字节字符缓冲区
+        StringBuffer sb2 = new StringBuffer(1024);//分配1024字节字符缓冲区
+        StringBuffer sb = new StringBuffer(&quot;I&#39;m better!&quot;);
+        //追加方法
+        sb.append(&quot;yes&quot;);
+        System.out.println(sb);//I&#39;m better!yes
+        //指定位置删除,从0开始
+        sb.deleteCharAt(1);
+        System.out.println(sb);//Im better!yes
+        //删除一定范围位置的字符，包括开始位置，不包括结束位置
+        sb.delete(0, 7);
+        System.out.println(sb);//er!yes
+        //在指定位置插入字符串
+        sb.insert(6, &quot;hello&quot;);
+        System.out.println(sb);//er!yeshello
+        //反向方法：将字符串内容反转，形成新的字符串
+        sb.reverse();
+        System.out.println(sb);//ollehsey!re
+        //替换指定位置字符
+        sb.setCharAt(6, &#39;A&#39;);
+        System.out.println(sb);//ollehsAy!re
+        //替换指定位置字符串
+        sb.replace(0, 3, &quot;Hello&quot;);
+        System.out.println(sb);//HelloehsAy!re
+    }
+}</code></pre>
+</li>
+</ul>
+<h2 id="String不是最基本的数据类型"><a href="#String不是最基本的数据类型" class="headerlink" title="String不是最基本的数据类型"></a>String不是最基本的数据类型</h2><ul>
+<li>Java中只有8大基本数据类型(primitive type)，除此之外都是引用类型(reference type),枚举类型（enumeration type）也是引用类型。</li>
+<li>java.lang.String类是final类型的，因此不可以继承这个类、不能修改这个类。为了提高效率节省空间，我们应该用StringBuffer类。</li>
+<li>byte(1个字节),int(4个字节),long(8个字节),float(4个字节),doublelong(8个字节),char(2个字节),boolean(理论上占用1bit,1/8字节，实际处理按1byte处理) ,short(2个字节)</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 2762954662@qq.com </span>
