@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小白</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="小白">
+  <title>Java基础（二） | 小白</title>
+  <meta name="keywords" content=" Java基础 ">
+  <meta name="description" content="Java基础（二） | 小白">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我是一个在校大学生，今年大三了，很遗憾现在才搭建起自己的空间，这个事情原本在我大二刚开始就应该做的，由于一直不肯动手，也是由于愿望不够强烈，就一直拖延到现在。由于大三以来，荒废了比较多的时间，不得不逼自己一把，搭建起自己的博客，促使自己去整理，总结学过的知识，同时也希望能帮助到更多的人。接下来剩余的大学时光，我将先总结已学过的技术，写成博客，发布到这里，后续将继续学习形成我的技术栈，也会时时在这里">
 <meta property="og:type" content="website">
@@ -50,7 +50,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="http://q1oi1oc62.bkt.clouddn.com/touxiang.jpg" />
@@ -291,12 +291,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Java基础（二）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于我"><span class="toc-text">关于我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#致谢"><span class="toc-text">致谢</span></a></li></ol>
+        <h1 class="article-title">Java基础（二）</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="Java">Java</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color2">Java基础</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-02 16:03:53'>2019-12-01 19:02</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#大O符号-big-O-notation"><span class="toc-text">大O符号(big-O notation)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组-Array-和列表-ArrayList-的区别及使用场景"><span class="toc-text">数组(Array)和列表(ArrayList)的区别及使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#值传递和引用传递"><span class="toc-text">值传递和引用传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么会出现4-0-3-6-0-40000001这种现象？"><span class="toc-text">为什么会出现4.0-3.6=0.40000001这种现象？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十进制的数在内存中的存储"><span class="toc-text">十进制的数在内存中的存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#符号“-”比较的是什么？"><span class="toc-text">符号“==”比较的是什么？</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -309,19 +365,261 @@
     }
 </style>
 </div>
-            <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Java后端菜鸟一枚，热衷于Java。喜欢和伙伴一起出去吃喝玩乐，吃自助、喝点小酒，五黑，唱歌，跑步，打乒乓球、羽毛球。我将在这里分享自己的学习历程，以及实践中遇到的问题的解决方案，如有错误，欢迎批评改正！</p>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>  生成，部署在  <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> ，主题基于  <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 修改生成，非常感谢 <a href="https://github.com/P233" target="_blank" rel="noopener">Peiwen Lu</a> 开发出这么漂亮的主题。</p>
-<p>本博客的源码托管在 <a href="https://github.com/yslinzz/yslinzz.github.io" target="_blank" rel="noopener">Github</a> 上，如果有任何改进意见，欢迎讨论。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="大O符号-big-O-notation"><a href="#大O符号-big-O-notation" class="headerlink" title="大O符号(big-O notation)"></a>大O符号(big-O notation)</h2><ul>
+<li><p>大O符号描述了当数据结构里面的元素增加的时候，算法的规模或者是性能在最坏的场景下有多么好。<br>大O符号也可用来描述其他的行为，比如：内存消耗。因为集合类实际上是数据结构，我们一般使用大O符号基于时间，内存和性能来选择最好的实现。大O符号可以对大量数据的性能给出一个很好的说明。</p>
+<p>同时，大O符号表示一个程序运行时所需要的渐进时间复杂度上界。</p>
+<p>其函数表示是：</p>
+<p>对于函数f(n),g(n),如果存在一个常数c，使得f(n)&lt;=c*g(n),则f(n)=O(g(n));</p>
+<p>大O描述当数据结构中的元素增加时，算法的规模和性能在最坏情景下有多好。</p>
+<p>大O还可以描述其它行为，比如内存消耗。因为集合类实际上是数据结构，因此我们一般使用大O符号基于时间，内存，性能选择最好的实现。大O符号可以对大量数据性能给予一个很好的说明。</p>
+</li>
+</ul>
+<h2 id="数组-Array-和列表-ArrayList-的区别及使用场景"><a href="#数组-Array-和列表-ArrayList-的区别及使用场景" class="headerlink" title="数组(Array)和列表(ArrayList)的区别及使用场景"></a>数组(Array)和列表(ArrayList)的区别及使用场景</h2><ul>
+<li>区别：Array可以包含基本数据类型和对象类型，ArrayList只能包含对象类型；Array大小固定，ArrayList大小动态变化；ArrayList提供更多的方法和特性，比如：addAll()，removeAll()，iterator()等等。</li>
+<li>场景：处理固定大小时用Array（限于多为查找操作），动态用ArrayList（限于多为查找操作），多为增删改操作用LinkedList（底层是链表）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">java.util.ArrayList &lt; E &gt; 的一些方法</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ArrayList()</td>
+<td align="center">构造函数，创建一个空的列表, size为0</td>
+</tr>
+<tr>
+<td align="center">add(y:E): void</td>
+<td align="center">在list的末尾添加一个元素y</td>
+</tr>
+<tr>
+<td align="center">add(index:int,y:E):void</td>
+<td align="center">在指定的index处插入元素y</td>
+</tr>
+<tr>
+<td align="center">clear(): void</td>
+<td align="center">从list中删除所有元素</td>
+</tr>
+<tr>
+<td align="center">contains(y: Object): boolean</td>
+<td align="center">如果list含有元素y，返回true</td>
+</tr>
+<tr>
+<td align="center">get(index: int): E</td>
+<td align="center">返回指定index处的元素</td>
+</tr>
+<tr>
+<td align="center">indexOf(y: Object): int</td>
+<td align="center">返回list中第一个匹配元素的index</td>
+</tr>
+<tr>
+<td align="center">isEmpty(): boolean</td>
+<td align="center">如果list不含元素，返回true</td>
+</tr>
+<tr>
+<td align="center">lastIndexOf(y: Object): int</td>
+<td align="center">返回list中最后一个匹配元素的index</td>
+</tr>
+<tr>
+<td align="center">remove(y: Object): boolean</td>
+<td align="center">删除list中的第一个元素y，如果元素被删除，返回true</td>
+</tr>
+<tr>
+<td align="center">size(): int</td>
+<td align="center">返回list中元素个数</td>
+</tr>
+<tr>
+<td align="center">remove(index: int): boolean</td>
+<td align="center">删除指定index处的元素，如果元素被删除，返回true</td>
+</tr>
+<tr>
+<td align="center">set(index: int, y: E): E</td>
+<td align="center">设置指定index处的元素为y</td>
+</tr>
+</tbody></table>
+<ul>
+<li>数组和ArrayList的比较</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">Array</th>
+<th align="center">ArrayList</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">创建 array/ArrayList</td>
+<td align="center">String[] a = new String[10]</td>
+<td align="center">ArrayList list = new ArrayList&lt;&gt;();</td>
+</tr>
+<tr>
+<td align="center">访问一个元素</td>
+<td align="center">a[index]</td>
+<td align="center">list.get(index);</td>
+</tr>
+<tr>
+<td align="center">更新一个元素</td>
+<td align="center">a[index] = “London”;</td>
+<td align="center">list.set(index, “London”);</td>
+</tr>
+<tr>
+<td align="center">返回大小</td>
+<td align="center">a.length</td>
+<td align="center">list.size();</td>
+</tr>
+<tr>
+<td align="center">排序</td>
+<td align="center">java.util.Arrays.sort(array)</td>
+<td align="center">java.util.Collections.sort(arraylist)</td>
+</tr>
+<tr>
+<td align="center">添加一个新元素</td>
+<td align="center">很麻烦</td>
+<td align="center">list.add(“London”);</td>
+</tr>
+<tr>
+<td align="center">插入一个新元素</td>
+<td align="center">很麻烦</td>
+<td align="center">list.add(index, “London”);</td>
+</tr>
+<tr>
+<td align="center">删除一个元素</td>
+<td align="center">很麻烦</td>
+<td align="center">list.remove(index);</td>
+</tr>
+<tr>
+<td align="center">删除一个元素</td>
+<td align="center">很麻烦</td>
+<td align="center">list.remove(Object);</td>
+</tr>
+<tr>
+<td align="center">删除所有元素</td>
+<td align="center">没有</td>
+<td align="center">list.clear();</td>
+</tr>
+</tbody></table>
+<h2 id="值传递和引用传递"><a href="#值传递和引用传递" class="headerlink" title="值传递和引用传递"></a>值传递和引用传递</h2><ul>
+<li><p>看了一篇博客真的讲的很精彩，这里推荐给大家：<a href="https://blog.csdn.net/bntx2jsqfehy7/article/details/83508006#commentsedit" target="_blank" rel="noopener">这一次，让你彻底明白Java的值传递和引用传递！</a></p>
+</li>
+<li><p>我自己再总结一下，Java中值传递是针对基本变量而言的，传递的是值的拷贝，引用传递其实是把实参地址的拷贝传递给了形参，导致形参变量也指向实参变量地址，传递的并不是对象本身，所以一般对引用对象操作会改变对象本身，一般认为,java内的传递都是值传递.</p>
+</li>
+</ul>
+<pre><code class="java">package basis;
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+/**
+ * 值传递，引用传递
+ * @author shulinYuan Email:2762954662@qq.com
+ *
+ */
+public class Demo06 {
+    public static void main(String[] args) {
+        int a = 5;
+        //值传递
+        change1(a);
+        System.out.println(a);//a=5
+
+        //引用传递
+        StringBuffer str = new StringBuffer(&quot;Hello&quot;);
+        change2(str);
+        System.out.println(str);//Hello World!
+
+        //引用传递，但是并没有改变str值，如果改变应该为//Hello World! World!
+        change3(str);
+        System.out.println(str);//Hello World!
+    }
+
+    public static void change1(int x) {
+        x = x +1;
+    }
+
+    public static void change2(StringBuffer stBf) {
+        stBf.append(&quot; World!&quot;);
+    }
+
+    public static void change3(StringBuffer stBf) {
+        stBf = new StringBuffer();
+        stBf.append(&quot; World!&quot;);
+    }
+}</code></pre>
+<h2 id="为什么会出现4-0-3-6-0-40000001这种现象？"><a href="#为什么会出现4-0-3-6-0-40000001这种现象？" class="headerlink" title="为什么会出现4.0-3.6=0.40000001这种现象？"></a>为什么会出现4.0-3.6=0.40000001这种现象？</h2><ul>
+<li><p>原因简单来说是这样：2进制的小数无法精确的表达10进制小数，计算机在计算10进制小数的过程中要先转换为2进制进行计算，这个过程中出现了误差。</p>
+</li>
+<li><p>把3.6转成2进制你会发现是无限循环小数（转一下你就明白了）</p>
+</li>
+<li><p>十进制小数转二进制方法</p>
+<p>0.8125的二进制</p>
+<p>0.8125*2=1.625   取整是1</p>
+<p>0.625*2=1.25     取整是1</p>
+<p>0.25*2=0.5       取整是0</p>
+<p>0.5*2=1.0        取整是1</p>
+<p>即0.8125的二进制是0.1101（第一次所得到为最高位,最后一次得到为最低位）</p>
+</li>
+</ul>
+<h2 id="十进制的数在内存中的存储"><a href="#十进制的数在内存中的存储" class="headerlink" title="十进制的数在内存中的存储"></a>十进制的数在内存中的存储</h2><ul>
+<li><p>以补码形式存储</p>
+</li>
+<li><p>原因：</p>
+<ol>
+<li><p>补码可以表示-128<del>127的255个有符号数，而原码和反码只能表示-127</del>127的254个有符号数，因为0会出现重码（-0和0）</p>
+</li>
+<li><p>补码还有很多特性，这些特性为符号数的运算提供了方便。(而且有些特性“原码”和“反码”是不具备的)</p>
+</li>
+</ol>
+<p>补码定义:正数的补码与原码相同；负数的补码是对其原码逐位取反，但符号位除外；然后整个数加1。</p>
+<p>[X]补:表示X的补码</p>
+<p>|X|:表示X的绝对值</p>
+<p>当X &lt; 0 时[X]补 = 2~8 - |X|；</p>
+<p>当X &gt;=0 时[X]补 = |X| =X；</p>
+<p>1）  [X+Y]补 = [X]补 +[Y]补</p>
+<p>2）  [X-Y]补 = [X]补 - [Y]补 = [X]补 + [-Y]补</p>
+<p>3）  [X*Y]补=[X]补*[Y]补 (乘数（被乘数）相乘的补码等于补码的相乘。)</p>
+<p>4）  正数的补码取反加1后，为其对应的负数的补码；负数的补码取反加1后为其绝对值的补码。<br>即:X&gt;=0:[ [-X]补 ]补 = |X| = X<br>X&lt;0 [ [X]补]补 = |X| = -X<br>等等……</p>
+</li>
+</ul>
+<h2 id="符号“-”比较的是什么？"><a href="#符号“-”比较的是什么？" class="headerlink" title="符号“==”比较的是什么？"></a>符号“==”比较的是什么？</h2><ul>
+<li>对于基本数据类型，“==”比较的是数值，只要两个变量的值相等，就返回true；对于引用类型（对象类型）比较的是两个变量是否指向同一个对象，如果是返回true </li>
+<li>equals()方法是Object类提供的一个实例方法，只有引用变量才有，判断两个对象是否相等的标准和“==”一样；但是在String类中以经重写该方法，所以只要两个字符串包含的字符序列相同，equals（）就返回true</li>
+</ul>
+<pre><code class="java">package basis;
+
+/**
+ * &quot;==&quot;,equals()
+ * @author shulinYuan 
+ * @Email:2762954662@qq.com
+ */
+public class Demo07 {
+    public static void main(String[] args) {
+        int a = 97;
+        char b = &#39;a&#39;;
+        float c = 97.0f;
+        String str1 = new String(&quot;Hello&quot;);
+        String str2 = new String(&quot;Hello&quot;);
+        System.out.println(a==b);//true
+        System.out.println(a==c);//true
+        System.out.println(c==b);//true
+        System.out.println(str1==str2);//false
+        System.out.println(str1.equals(str2));//true
+    }
+}</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 2762954662@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -341,6 +639,13 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+
+
 
 
     </div>
