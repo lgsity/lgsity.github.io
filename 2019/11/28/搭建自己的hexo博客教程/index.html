@@ -438,11 +438,8 @@
 <p>然后去本地修改_config.yml文件，</p>
 <p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128112005016.png" alt></p>
 <p>找到deploy配置如下：</p>
-<pre><code>deploy:
-  type: git
-  repo: https://github.com/yslinzz/abc.github.io.git
-  branch: master
-</code></pre><p><strong>注意：每一个冒号后面要有一个空格，repo是刚刚你自己建的那个空的仓库的地址，如下图（我这里abc命名是随便写的，与前面冲突，不要在意）</strong></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/yslinzz/abc.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<p><strong>注意：每一个冒号后面要有一个空格，repo是刚刚你自己建的那个空的仓库的地址，如下图（我这里abc命名是随便写的，与前面冲突，不要在意）</strong></p>
 <p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128112647499.png" alt></p>
 <p>然后执行<code>hexo clean</code>清理一下，再执行<code>hexo generate</code>或者<code>hexo g</code> 生成静态博客系统 ,最后执行<code>hexo deploy</code>或者缩写<code>hexo d</code>将博客系统推送到GitHub并发布</p>
 <p><img src="http://q1oi1oc62.bkt.clouddn.com/image-20191128113444910.png" alt></p>

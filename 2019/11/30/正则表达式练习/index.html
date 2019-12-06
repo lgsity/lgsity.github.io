@@ -438,26 +438,7 @@
 <p>过程中我以为表示或需要转义，使用的是\|,导致验证出错，这里再次提醒自己，|表示“或”的意思，\|单纯得表示“|”字符，没有特殊含义。</p>
 </li>
 <li><p><strong>验证</strong></p>
-<pre><code class="java">package regex;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-public class Telephone {
-    public static void main(String[] args){ 
-        //需要验证的手机号
-        String tel=&quot;12631721765&quot;;
-        //正则表达式
-        String reg =&quot;(0\\d{2,3}-\\d{7,8})|(\\d{7,8})|(1[358]\\d{9})&quot; ;  
-        //编译正则表达式
-         Pattern pattern = Pattern.compile(reg);
-
-        Matcher matcher = pattern.matcher(tel);
-        // 字符串是否与正则表达式相匹配
-        boolean rs = matcher.matches();
-        System.out.println(rs);                                
- }
-
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> regex;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Telephone</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123; </span><br><span class="line">		<span class="comment">//需要验证的手机号</span></span><br><span class="line">		String tel=<span class="string">"12631721765"</span>;</span><br><span class="line">		<span class="comment">//正则表达式</span></span><br><span class="line">        String reg =<span class="string">"(0\\d&#123;2,3&#125;-\\d&#123;7,8&#125;)|(\\d&#123;7,8&#125;)|(1[358]\\d&#123;9&#125;)"</span> ;  </span><br><span class="line">        <span class="comment">//编译正则表达式</span></span><br><span class="line">     	Pattern pattern = Pattern.compile(reg);</span><br><span class="line">    	</span><br><span class="line">    	Matcher matcher = pattern.matcher(tel);</span><br><span class="line">    	<span class="comment">// 字符串是否与正则表达式相匹配</span></span><br><span class="line">    	<span class="keyword">boolean</span> rs = matcher.matches();</span><br><span class="line">    	System.out.println(rs);                                </span><br><span class="line"> &#125;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="邮箱验证"><a href="#邮箱验证" class="headerlink" title="邮箱验证"></a>邮箱验证</h2><ul>

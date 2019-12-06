@@ -423,46 +423,7 @@
         <div class="entry-content">
           <h2 id="Java中如何跳出当前的多重嵌套循环"><a href="#Java中如何跳出当前的多重嵌套循环" class="headerlink" title="Java中如何跳出当前的多重嵌套循环"></a>Java中如何跳出当前的多重嵌套循环</h2><ul>
 <li><p>可以用带标签的break语句跳出，但是在Java中应该避免使用带标签break和continue语句，因为它不会让你的程序变得更优雅，很多时候甚至有相反的作用，所以这种语法其实不知道更好</p>
-<pre><code class="java">package basis;
-
-/**
- * 跳出多重嵌套循环
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo01 {
-    public static void main(String[] args) {
-        method1();
-        method2();
-    }
-
-    //定义标号，break退出
-    public static void method1() {
-        out://外层循环定义标号
-            for(int i=0;i&lt;10;i++) {
-                for(int j=0;j&lt;10;j++) {
-                    System.out.println(&quot;i=&quot;+i+&quot;,j=&quot;+j);
-                    if(j==6)
-                        break out;//使用标号
-                }
-            }
-    }
-
-    //让外层循环受到内层循环的控制
-    public static void method2() {
-        boolean flag = false;
-        for(int i=0;i&lt;10&amp;&amp;!flag;i++) {
-            for(int j=0;j&lt;10;j++) {
-                System.out.println(&quot;i=&quot;+i+&quot;,j=&quot;+j);
-                if(j==6) {
-                    flag = true;//内层控制外层
-                    break;//跳出内层循环
-                }
-            }
-        }
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 跳出多重嵌套循环</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		method1();</span><br><span class="line">		method2();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//定义标号，break退出</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		out:<span class="comment">//外层循环定义标号</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++) &#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++) &#123;</span><br><span class="line">					System.out.println(<span class="string">"i="</span>+i+<span class="string">",j="</span>+j);</span><br><span class="line">					<span class="keyword">if</span>(j==<span class="number">6</span>)</span><br><span class="line">						<span class="keyword">break</span> out;<span class="comment">//使用标号</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//让外层循环受到内层循环的控制</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>&amp;&amp;!flag;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">10</span>;j++) &#123;</span><br><span class="line">				System.out.println(<span class="string">"i="</span>+i+<span class="string">",j="</span>+j);</span><br><span class="line">				<span class="keyword">if</span>(j==<span class="number">6</span>) &#123;</span><br><span class="line">					flag = <span class="keyword">true</span>;<span class="comment">//内层控制外层</span></span><br><span class="line">					<span class="keyword">break</span>;<span class="comment">//跳出内层循环</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>break和continue的区别</strong>(觉得<a href="https://blog.csdn.net/Baronrothschlid/article/details/88936277" target="_blank" rel="noopener">这个</a>很形象，就摘抄过来了)</p>
 <p>假设有10个人参加面试，现在进行到第三个人了，突然，面试官有事了，需要走，那么今天剩下这些人就没有办法继续面试了，显然面试整个结束了。(break)</p>
@@ -471,60 +432,14 @@ public class Demo01 {
 </ul>
 <h2 id="amp-和-amp-amp-的区别"><a href="#amp-和-amp-amp-的区别" class="headerlink" title="&amp;和&amp;&amp;的区别"></a>&amp;和&amp;&amp;的区别</h2><ul>
 <li><p>&amp;有按位与和逻辑与，按位与就是把两个数都转化成二进制，然后<strong>逐位相与</strong>，比如下面的5&amp;6，就是00000101和00000110相与，结果为00000100，即4；逻辑与&amp;是<strong>非短路与</strong>，就是所有条件都会判断，<strong>短路与</strong>&amp;&amp;就是判断到当前条件不符合就不会再判断剩下的条件，测试代码如下：</p>
-<pre><code class="java">package basis;
-
-/**
- * &amp;与&amp;&amp;的区别
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo02 {
-    public static void main(String[] args) {
-        //按位与&amp;
-        int x = 5 &amp; 6;
-        System.out.println(x);//x=4
-        int a = 1;
-        int b = 2;
-        try {
-            //非短路与&amp;
-            if(a&gt;b &amp; a&lt;b/0)
-                System.out.println(&quot;不可能输出&quot;);
-        }catch (ArithmeticException e) {
-            System.out.println(&quot;非短路与&amp;就是所有条件都会判断，所以这里会报错，然后输出我。&quot;);
-        }
-        //短路与&amp;&amp;
-        if(a&gt;b &amp;&amp; a&lt;b/0) {
-            System.out.println(&quot;不可能输出&quot;);
-        }else {
-            System.out.println(&quot;短路与&amp;&amp;就是当条件不满足时，后面的条件不会再判断，所以这里不会报错&quot;);
-        }
-
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * &amp;与&amp;&amp;的区别</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//按位与&amp;</span></span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">5</span> &amp; <span class="number">6</span>;</span><br><span class="line">		System.out.println(x);<span class="comment">//x=4</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//非短路与&amp;</span></span><br><span class="line">			<span class="keyword">if</span>(a&gt;b &amp; a&lt;b/<span class="number">0</span>)</span><br><span class="line">				System.out.println(<span class="string">"不可能输出"</span>);</span><br><span class="line">		&#125;<span class="keyword">catch</span> (ArithmeticException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"非短路与&amp;就是所有条件都会判断，所以这里会报错，然后输出我。"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//短路与&amp;&amp;</span></span><br><span class="line">		<span class="keyword">if</span>(a&gt;b &amp;&amp; a&lt;b/<span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"不可能输出"</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"短路与&amp;&amp;就是当条件不满足时，后面的条件不会再判断，所以这里不会报错"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
 <li><p>最主要的区别就是int是基本数据类型，Integer是int的包装类，用<strong>面向对象的思想</strong>去看Integer，Java是一个近乎纯洁的面向对象编程语言，但是为了编程方便还是引入了基本数据类型，但是为了能把这些数据类型当作对象操作，Java为每一个基本数据类型都引入了对应的包装类型，从Java5开始引入了<strong>自动装/拆箱</strong>机制，使得二者可以相互转换。</p>
 </li>
 <li><p>装箱就是把int转成Integer对象，拆箱与之相反；对象缺省值是null，基本数据类型缺省值和类型有关，Integer缺省值是null，int缺省值是0。</p>
-<pre><code class="java">package basis;
-
-/**
- * 自动装箱，拆箱
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo03 {
-    public static void main(String[] args) {
-        Integer a = 5;//自动装箱
-        Integer b = new Integer(5);
-        int c = 5;
-        System.out.println(a==b);//false,a,b为两个不同的对象
-        System.out.println(a==c);//true,a自动拆箱成int类型与c比较
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自动装箱，拆箱</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Integer a = <span class="number">5</span>;<span class="comment">//自动装箱</span></span><br><span class="line">		Integer b = <span class="keyword">new</span> Integer(<span class="number">5</span>);</span><br><span class="line">		<span class="keyword">int</span> c = <span class="number">5</span>;</span><br><span class="line">		System.out.println(a==b);<span class="comment">//false,a,b为两个不同的对象</span></span><br><span class="line">		System.out.println(a==c);<span class="comment">//true,a自动拆箱成int类型与c比较</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>——原始类型：byte, int, long, float, double, short, char, boolean</p>
 <p>——包装类型：Byte, Integer, Long, Float, Double, Short, Character, Boolean</p>
@@ -532,68 +447,12 @@ public class Demo03 {
 </ul>
 <h2 id="如何输出一个某种编码的字符串"><a href="#如何输出一个某种编码的字符串" class="headerlink" title="如何输出一个某种编码的字符串"></a>如何输出一个某种编码的字符串</h2><ul>
 <li><p>字符串先调用getBytes(String charsetName)（参数为当前字符串的编码格式）转换成字节数组，再将此字节数组和要转换成的字节编码一起作为参数传入String类的构造方法中，即可生成指定编码的字符串，测试代码如下：</p>
-<pre><code class="java">package basis;
-
-/**
- * 输出指定编码字符串
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo04 {
-    public static void main(String[] args) {
-        String str = &quot;abcd&quot;;
-        String tempStr = &quot;&quot;;
-         try {
-         tempStr = new String(str.getBytes(&quot;utf-8&quot;), &quot;unicode&quot;);
-         tempStr = tempStr.trim();//trim() 方法用于删除字符串的头尾空白符。
-         }
-         catch (Exception e) {
-         System.err.println(e.getMessage());
-         }
-         System.out.println(tempStr);//慢捤
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 输出指定编码字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo04</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String str = <span class="string">"abcd"</span>;</span><br><span class="line">		String tempStr = <span class="string">""</span>;</span><br><span class="line">		 <span class="keyword">try</span> &#123;</span><br><span class="line">		 tempStr = <span class="keyword">new</span> String(str.getBytes(<span class="string">"utf-8"</span>), <span class="string">"unicode"</span>);</span><br><span class="line">		 tempStr = tempStr.trim();<span class="comment">//trim() 方法用于删除字符串的头尾空白符。</span></span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		 System.err.println(e.getMessage());</span><br><span class="line">		 &#125;</span><br><span class="line">		 System.out.println(tempStr);<span class="comment">//慢捤</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="String-和StringBuffer的区别"><a href="#String-和StringBuffer的区别" class="headerlink" title="String 和StringBuffer的区别"></a>String 和StringBuffer的区别</h2><ul>
 <li><p>String类是final的，不可修改的，只要改动了那就一定不是原来的对象，StringBuffer类拥有很多修改的方法，最重要的是不需要创建新的对象。String使用+拼接字符串时，一定要找一个新的更大的内存来存储，这是非常耗时的，而StringBuffer是预先就分配了指定长度的内存空间，不需要频繁分配内存，所以操作经常需要修改的字符串还是使用StringBuffer效率更高。</p>
-<pre><code class="java">package basis;
-
-/**
- * String和StringBuffer区别
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo05 {
-    public static void main(String[] args) {
-        StringBuffer sb1 = new StringBuffer();//分配16字节字符缓冲区
-        StringBuffer sb2 = new StringBuffer(1024);//分配1024字节字符缓冲区
-        StringBuffer sb = new StringBuffer(&quot;I&#39;m better!&quot;);
-        //追加方法
-        sb.append(&quot;yes&quot;);
-        System.out.println(sb);//I&#39;m better!yes
-        //指定位置删除,从0开始
-        sb.deleteCharAt(1);
-        System.out.println(sb);//Im better!yes
-        //删除一定范围位置的字符，包括开始位置，不包括结束位置
-        sb.delete(0, 7);
-        System.out.println(sb);//er!yes
-        //在指定位置插入字符串
-        sb.insert(6, &quot;hello&quot;);
-        System.out.println(sb);//er!yeshello
-        //反向方法：将字符串内容反转，形成新的字符串
-        sb.reverse();
-        System.out.println(sb);//ollehsey!re
-        //替换指定位置字符
-        sb.setCharAt(6, &#39;A&#39;);
-        System.out.println(sb);//ollehsAy!re
-        //替换指定位置字符串
-        sb.replace(0, 3, &quot;Hello&quot;);
-        System.out.println(sb);//HelloehsAy!re
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * String和StringBuffer区别</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo05</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		StringBuffer sb1 = <span class="keyword">new</span> StringBuffer();<span class="comment">//分配16字节字符缓冲区</span></span><br><span class="line">		StringBuffer sb2 = <span class="keyword">new</span> StringBuffer(<span class="number">1024</span>);<span class="comment">//分配1024字节字符缓冲区</span></span><br><span class="line">		StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">"I'm better!"</span>);</span><br><span class="line">		<span class="comment">//追加方法</span></span><br><span class="line">		sb.append(<span class="string">"yes"</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//I'm better!yes</span></span><br><span class="line">		<span class="comment">//指定位置删除,从0开始</span></span><br><span class="line">		sb.deleteCharAt(<span class="number">1</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//Im better!yes</span></span><br><span class="line">		<span class="comment">//删除一定范围位置的字符，包括开始位置，不包括结束位置</span></span><br><span class="line">		sb.delete(<span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//er!yes</span></span><br><span class="line">		<span class="comment">//在指定位置插入字符串</span></span><br><span class="line">		sb.insert(<span class="number">6</span>, <span class="string">"hello"</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//er!yeshello</span></span><br><span class="line">		<span class="comment">//反向方法：将字符串内容反转，形成新的字符串</span></span><br><span class="line">		sb.reverse();</span><br><span class="line">		System.out.println(sb);<span class="comment">//ollehsey!re</span></span><br><span class="line">		<span class="comment">//替换指定位置字符</span></span><br><span class="line">		sb.setCharAt(<span class="number">6</span>, <span class="string">'A'</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//ollehsAy!re</span></span><br><span class="line">		<span class="comment">//替换指定位置字符串</span></span><br><span class="line">		sb.replace(<span class="number">0</span>, <span class="number">3</span>, <span class="string">"Hello"</span>);</span><br><span class="line">		System.out.println(sb);<span class="comment">//HelloehsAy!re</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="String不是最基本的数据类型"><a href="#String不是最基本的数据类型" class="headerlink" title="String不是最基本的数据类型"></a>String不是最基本的数据类型</h2><ul>

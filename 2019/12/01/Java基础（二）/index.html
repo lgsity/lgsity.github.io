@@ -566,44 +566,7 @@
 <li><p>我自己再总结一下，Java中值传递是针对基本变量而言的，传递的是值的拷贝，引用传递其实是把实参地址的拷贝传递给了形参，导致形参变量也指向实参变量地址，传递的并不是对象本身，所以一般对引用对象操作会改变对象本身，一般认为,java内的传递都是值传递.</p>
 </li>
 </ul>
-<pre><code class="java">package basis;
-
-/**
- * 值传递，引用传递
- * @author shulinYuan Email:2762954662@qq.com
- *
- */
-public class Demo06 {
-    public static void main(String[] args) {
-        int a = 5;
-        //值传递
-        change1(a);
-        System.out.println(a);//a=5
-
-        //引用传递
-        StringBuffer str = new StringBuffer(&quot;Hello&quot;);
-        change2(str);
-        System.out.println(str);//Hello World!
-
-        //引用传递，但是并没有改变str值，如果改变应该为//Hello World! World!
-        change3(str);
-        System.out.println(str);//Hello World!
-    }
-
-    public static void change1(int x) {
-        x = x +1;
-    }
-
-    public static void change2(StringBuffer stBf) {
-        stBf.append(&quot; World!&quot;);
-    }
-
-    public static void change3(StringBuffer stBf) {
-        stBf = new StringBuffer();
-        stBf.append(&quot; World!&quot;);
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 值传递，引用传递</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan Email:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo06</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">		<span class="comment">//值传递</span></span><br><span class="line">		change1(a);</span><br><span class="line">		System.out.println(a);<span class="comment">//a=5</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//引用传递</span></span><br><span class="line">		StringBuffer str = <span class="keyword">new</span> StringBuffer(<span class="string">"Hello"</span>);</span><br><span class="line">		change2(str);</span><br><span class="line">		System.out.println(str);<span class="comment">//Hello World!</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//引用传递，但是并没有改变str值，如果改变应该为//Hello World! World!</span></span><br><span class="line">		change3(str);</span><br><span class="line">		System.out.println(str);<span class="comment">//Hello World!</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change1</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">		x = x +<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change2</span><span class="params">(StringBuffer stBf)</span> </span>&#123;</span><br><span class="line">		stBf.append(<span class="string">" World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change3</span><span class="params">(StringBuffer stBf)</span> </span>&#123;</span><br><span class="line">		stBf = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">		stBf.append(<span class="string">" World!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="为什么会出现4-0-3-6-0-40000001这种现象？"><a href="#为什么会出现4-0-3-6-0-40000001这种现象？" class="headerlink" title="为什么会出现4.0-3.6=0.40000001这种现象？"></a>为什么会出现4.0-3.6=0.40000001这种现象？</h2><ul>
 <li><p>原因简单来说是这样：2进制的小数无法精确的表达10进制小数，计算机在计算10进制小数的过程中要先转换为2进制进行计算，这个过程中出现了误差。</p>
 </li>
@@ -643,28 +606,7 @@ public class Demo06 {
 <li>对于基本数据类型，“==”比较的是数值，只要两个变量的值相等，就返回true；对于引用类型（对象类型）比较的是两个变量是否指向同一个对象，如果是返回true </li>
 <li>equals()方法是Object类提供的一个实例方法，只有引用变量才有，判断两个对象是否相等的标准和“==”一样；但是在String类中以经重写该方法，所以只要两个字符串包含的字符序列相同，equals（）就返回true</li>
 </ul>
-<pre><code class="java">package basis;
-
-/**
- * &quot;==&quot;,equals()
- * @author shulinYuan 
- * @Email:2762954662@qq.com
- */
-public class Demo07 {
-    public static void main(String[] args) {
-        int a = 97;
-        char b = &#39;a&#39;;
-        float c = 97.0f;
-        String str1 = new String(&quot;Hello&quot;);
-        String str2 = new String(&quot;Hello&quot;);
-        System.out.println(a==b);//true
-        System.out.println(a==c);//true
-        System.out.println(c==b);//true
-        System.out.println(str1==str2);//false
-        System.out.println(str1.equals(str2));//true
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basis;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * "==",equals()</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shulinYuan </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Email</span>:2762954662@qq.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo07</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">97</span>;</span><br><span class="line">		<span class="keyword">char</span> b = <span class="string">'a'</span>;</span><br><span class="line">		<span class="keyword">float</span> c = <span class="number">97.0f</span>;</span><br><span class="line">		String str1 = <span class="keyword">new</span> String(<span class="string">"Hello"</span>);</span><br><span class="line">		String str2 = <span class="keyword">new</span> String(<span class="string">"Hello"</span>);</span><br><span class="line">		System.out.println(a==b);<span class="comment">//true</span></span><br><span class="line">		System.out.println(a==c);<span class="comment">//true</span></span><br><span class="line">		System.out.println(c==b);<span class="comment">//true</span></span><br><span class="line">		System.out.println(str1==str2);<span class="comment">//false</span></span><br><span class="line">		System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <!-- .entry-content -->
